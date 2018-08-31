@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |---------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |         |      |      |      |      |      |      |           |      |   &  |   1  |   2  |   3  |   \  |        |
  * `---------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   | EPRM  |      |      |      |      |                                       | T->0 |    . |   0  |   =  |      |
+ *   | CTRL  | EPRM |      |      | Alt  |                                       | T->0 |    . |   0  |   =  |      |
  *   `-----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        | Prev | Next |       |      |      |
@@ -87,7 +87,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS,KC_TRNS,KC_UP,  KC_TRNS, KC_TRNS,KC_TRNS,KC_TRNS,
        KC_ESC, KC_LEFT,KC_DOWN,KC_RIGHT,KC_TRNS,KC_TRNS,
        KC_TRNS, KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
-          EPRM,KC_TRNS,KC_TRNS,KC_TRNS, KC_TRNS,
+          KC_LCTL,EPRM,KC_TRNS,KC_TRNS, KC_LALT,
                                        KC_TRNS,KC_TRNS,
                                                KC_TRNS,
                                KC_TRNS,KC_TRNS,KC_TRNS,
