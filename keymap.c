@@ -14,95 +14,18 @@ enum custom_keycodes {
   RGB_SLD
 };
 
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-/* Keymap 0: Basic layer
- *
- * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |   `    |   1  |   2  |   3  |   4  |   5  |  =   |           | F4   |   6  |   7  |   8  |   9  |   0  |   BS   |
- * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * | TAB    |   Q  |   W  |   E  |   R  |   T  |   -  |           |   [  |   Y  |   U  |   I  |   O  |   P  |   ]    |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * | ESC    |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  | ENTER  |
- * |--------+------+------+------+------+------|   \  |           |  '   |------+------+------+------+------+--------|
- * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |  /   | RShift |
- * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |CTRL  |Syper |   ,  |   .  |  Alt  |                                       | T->1| PRNT |  ALT | SUPER| CTRL  |
- *   `----------------------------------'                                       `----------------------------------'
- *                                        ,-------------.       ,-------------.
- *                                        | Home | End  |       |  <-  |  ->  |
- *                                 ,------|------|------|       |------+--------+------.
- *                                 |      |      | PgUp |       |  Up  |        |      |
- *                                 | Space|  DEL |------|       |------| Enter  |Space |
- *                                 |      |      | PgDn |       |  Dn  |        |      |
- *                                 `--------------------'       `----------------------'
- */
-// If it accepts an argument (i.e, is a function), it doesn't need KC_.
-// Otherwise, it needs KC_*
-[BASE] = LAYOUT_ergodox(  // layer 0 : default
-  // left hand
-  KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,   KC_5,   KC_EQL,
-  KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,   KC_T,   KC_MINS,
-  KC_ESC,   KC_A,     KC_S,     KC_D,     KC_F,   KC_G,
-  KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,   KC_B,   KC_BSLS,
-  KC_LCTL,  KC_LWIN,  KC_COMM,  KC_DOT,  KC_LALT,
-                                                  KC_HOME,  KC_END,
-                                                            KC_PGUP,
-                                          KC_SPC, KC_DEL,   KC_PGDN,
-  // right hand
-  KC_F4,    KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_BSPC,
-  KC_LBRC,  KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_RBRC,
-            KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_ENT,
-  KC_QUOT,  KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_RSFT,
-                      TO(1),    KC_PSCR,  KC_LALT,  KC_RWIN,  KC_RCTL,
-  KC_LEFT,  KC_RIGHT,
-  KC_UP,
-  KC_DOWN,  KC_ENT, KC_SPC
-),
-/* Keymap 1: Symbol Layer
- *
- * ,---------------------------------------------------.           ,--------------------------------------------------.
- * |Version  |  F1  |  F2  |  F3  |  F4  |  F5  |      |           |      |  F6  |  F7  |  F8  |  F9  |  F10 |   F11  |
- * |---------+------+------+------+------+------+------|           |------+------+------+------+------+------+--------|
- * |         |      |  Up  |      |      |      |      |           |      |   Up |   7  |   8  |   9  |   *  |   F12  |
- * |---------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |   ESC   |  <-  |  Dn  |  ->  |      |      |------|           |------| Down |   4  |   5  |   6  |   +  |        |
- * |---------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |         |      |      |      |      |      |      |           |      |   &  |   1  |   2  |   3  |   \  |        |
- * `---------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   | CTRL  | EPRM |      |      | Alt  |                                      | T->0 |    . |   0  |   =  |      |
- *   `-----------------------------------'                                       `----------------------------------'
- *                                        ,-------------.       ,-------------.
- *                                        | Prev | Next |       |      |      |
- *                                 ,------|------|------|       |------+------+------.
- *                                 | Play |      |VolUp |       |      |      |      |
- *                                 |Pause | Mute |------|       |------|      |      |
- *                                 |      |      |VolDn |       |      |      |      |
- *                                 `--------------------'       `--------------------'
- */
-// SYMBOLS
 
-[SYMB] = LAYOUT_ergodox(
-       // left hand
-       VRSN,   KC_F1,  KC_F2,  KC_F3,   KC_F4,  KC_F5,  KC_TRNS,
-       KC_TRNS,KC_TRNS,KC_UP,  KC_TRNS, KC_TRNS,KC_TRNS,KC_TRNS,
-       KC_ESC, KC_LEFT,KC_DOWN,KC_RIGHT,KC_TRNS,KC_TRNS,
-       KC_TRNS, KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
-          KC_LCTL,EPRM,KC_TRNS,KC_TRNS, KC_LALT,
-                                       KC_TRNS,KC_TRNS,
-                                               KC_TRNS,
-                               KC_TRNS,KC_TRNS,KC_TRNS,
-       // right hand
-       KC_TRNS, KC_F6,   KC_F7,  KC_F8,   KC_F9,   KC_F10,  KC_F11,
-       KC_TRNS, KC_UP,   KC_7,   KC_8,    KC_9,    KC_ASTR, KC_F12,
-                KC_DOWN, KC_4,   KC_5,    KC_6,    KC_PLUS, KC_TRNS,
-       KC_TRNS, KC_AMPR, KC_1,   KC_2,    KC_3,    KC_BSLS, KC_TRNS,
-                         TO(0),KC_DOT,  KC_0,    KC_EQL,  KC_TRNS,
-       KC_MPRV, KC_MNXT,
-       KC_VOLU,
-       KC_VOLD, KC_MUTE, KC_MPLY
-),
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+
+  [0] = KEYMAP(KC_GRAVE,KC_1,KC_2,KC_3,KC_4,KC_5,KC_EQUAL,KC_TAB,KC_Q,KC_W,KC_E,KC_R,KC_T,KC_MINUS,LT(1,KC_ESCAPE),KC_A,KC_S,KC_D,KC_F,KC_G,KC_LSHIFT,KC_Z,KC_X,KC_C,KC_V,KC_B,KC_BSLASH,KC_LCTL,KC_LGUI,KC_LEFT,KC_RIGHT,KC_LALT,ALGR_T(KC_MEDIA_PLAY_PAUSE),KC_LGUI,KC_HOME,KC_SPACE,KC_DELETE,KC_END,KC_PSCREEN,KC_6,KC_7,KC_8,KC_9,KC_0,KC_BSPACE,KC_LBRACKET,KC_Y,KC_U,KC_I,KC_O,KC_P,KC_RBRACKET,KC_H,KC_J,KC_K,KC_L,KC_SCOLON,KC_ENTER,KC_QUOTE,KC_N,KC_M,KC_COMMA,KC_DOT,LT(2,KC_SLASH),SFT_T(KC_ESCAPE),KC_DELETE,KC_UP,KC_DOWN,MO(2),MO(1),ALT_T(KC_INSERT),CTL_T(KC_ESCAPE),KC_PGUP,KC_PGDOWN,KC_ENTER,KC_SPACE),
+
+  [1] = KEYMAP(RESET,KC_F1,KC_F2,KC_F3,KC_F4,KC_F5,KC_AUDIO_MUTE,KC_TRANSPARENT,KC_TRANSPARENT,KC_UP,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_AUDIO_VOL_UP,KC_TRANSPARENT,KC_LEFT,KC_DOWN,KC_RIGHT,KC_TRANSPARENT,KC_TRANSPARENT,KC_LSHIFT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_AUDIO_VOL_DOWN,KC_LCTL,KC_LGUI,KC_TRANSPARENT,KC_TRANSPARENT,KC_LALT,RGB_MOD,KC_TRANSPARENT,KC_TRANSPARENT,RGB_VAD,RGB_VAI,RGB_FF0000,KC_TRANSPARENT,KC_F6,KC_F7,KC_F8,KC_F9,KC_F10,KC_F11,RGB_800080,KC_UP,KC_7,KC_8,KC_9,KC_ASTR,KC_F12,KC_DOWN,KC_4,KC_5,KC_6,KC_PLUS,KC_F14,RGB_FFA500,KC_AMPR,KC_1,KC_2,KC_3,KC_BSLASH,KC_F15,KC_TRANSPARENT,KC_DOT,KC_0,KC_EQUAL,KC_TRANSPARENT,RGB_TOG,RGB_SLD,KC_TRANSPARENT,RGB_008000,RGB_HUD,RGB_HUI),
+
+  [2] = KEYMAP(KC_TRANSPARENT,KC_TRANSPARENT,KC_MS_BTN3,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_MS_BTN1,KC_MS_UP,KC_MS_BTN2,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_ESCAPE,KC_MS_LEFT,KC_MS_DOWN,KC_MS_RIGHT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_LCTL,KC_LGUI,KC_TRANSPARENT,KC_TRANSPARENT,KC_LALT,KC_MEDIA_PREV_TRACK,KC_MEDIA_NEXT_TRACK,KC_TRANSPARENT,KC_PAUSE,KC_MEDIA_PLAY_PAUSE,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_MEDIA_PLAY_PAUSE,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_WWW_BACK,KC_WWW_FORWARD),
 
 };
+
+
 
 const uint16_t PROGMEM fn_actions[] = {
     [1] = ACTION_LAYER_TAP_TOGGLE(SYMB)                // FN1 - Momentary Layer 1 (Symbols)
